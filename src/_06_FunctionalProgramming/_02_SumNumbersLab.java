@@ -10,22 +10,22 @@ public class _02_SumNumbersLab {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-       // 1-ви вариант с повече писане и логика.
+        // 1-ви вариант с повече писане и логика.
         String[] numbers = scanner.nextLine().split(", ");
 
         int count = 0;
         int sum = 0;
 
-        for (int i = 1; i <= numbers.length; i++) {
-            count = i;
-            sum += Integer.parseInt(numbers[i - 1]);
+        for (int i = 0; i < numbers.length; i++) {
+            count++;
+            sum += Integer.parseInt(numbers[i]);
         }
         System.out.println("Count =  " + count);
         System.out.println("Sum = " + sum);
 
         //2-ри вариант.
 
-        Function<String, Integer> parser = e ->Integer.parseInt(e);
+        Function<String, Integer> parser = e -> Integer.parseInt(e);
 
         List<Integer> list = Arrays.stream(numbers)
                 .map(parser)
